@@ -1,8 +1,8 @@
-package com.pi;
+package com.pi.pages;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.support.PageFactory;
 
-import static com.pi.Browser.driver;
+import static com.pi.pages.Browser.driver;
 
 public class Pages {
 

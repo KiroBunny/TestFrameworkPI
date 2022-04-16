@@ -1,4 +1,5 @@
-com\pi\Browser.class
-com\pi\LoginPage.class
-com\pi\HomePage.class
-com\pi\Pages.class
+com/pi/pages/Pages.class
+com/pi/configuration/Configuration.class
+com/pi/pages/Browser.class
+com/pi/pages/HomePage.class
+com/pi/pages/LoginPage.class

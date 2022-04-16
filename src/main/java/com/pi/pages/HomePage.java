@@ -1,4 +1,4 @@
-package com.pi;
+package com.pi.pages;
 
 public class HomePage {
 
