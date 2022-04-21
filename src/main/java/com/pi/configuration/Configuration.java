@@ -7,10 +7,8 @@ import java.util.Properties;
 
 public class Configuration
 {
-	static final String APPLICATION_ADDRESS = "applicationAddress";
-	static final String GRID_HUB_URL = "gridHubUrl";
-	static final String BROWSER_NAME = "browserName";
-	static final String DRIVER_TYPE = "driverType";
+	public static final String APPLICATION_ADDRESS = "applicationAddress";
+	public static final String BROWSER_NAME = "browserName";
 
 	private static FileReader reader;
 	private static Properties properties;

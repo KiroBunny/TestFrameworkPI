@@ -10,24 +10,26 @@ public class LoginPage {
     @FindAll({
             @FindBy(css = "input[name='username']"),
             @FindBy(css = "input[name='email']"),
-            @FindBy(css = "input[name='name']"),
+            @FindBy(css = "input[name='log']"),
             @FindBy(css = "input[name='login']"),
     })
-    private WebElement emailInput;
+    private WebElement loginInput;
 
-    @FindBy(css = "input[name='password']")
+    @FindAll({
+            @FindBy(css = "input[name='password']"),
+            @FindBy(css = "input[name='pwd']"),
+    })
     private WebElement passwordInput;
 
     @FindAll({
-            @FindBy(css = "button[id='submit-login']"),
-            @FindBy(css = "button[id='submit']"),
-            @FindBy(css = "button[id='login']"),
-            @FindBy(css = "button[id='loginbtn']")
+            @FindBy(css = "button[name='wp-submit']"),
+            @FindBy(css = "button[name='submit']"),
+            @FindBy(css = "button[name='login']"),
+            @FindBy(xpath = "//input[@type='submit' and @value='Zaloguj się']")
     })
     private WebElement submitButton;
-    private String url;
-
-    // private static String url = "http://platforma.polsl.pl/rm/login";
+    private final String url = "http://192.168.0.88/wp-login.php";
+    private final String tittle = "Zaloguj się ‹ edytaPI — WordPress";
 
     public LoginPage(WebDriver driver) {
     }
@@ -37,7 +39,7 @@ public class LoginPage {
 
     public void logOnPage(String login, String password)
     {
-        emailInput.sendKeys(login);
+        loginInput.sendKeys(login);
         passwordInput.sendKeys(password);
         submitButton.click();
     }
@@ -48,7 +50,7 @@ public class LoginPage {
     }
 
     public boolean isAt(){
-        return Browser.getTittle().equalsIgnoreCase("Platforma Zdalnej Edukacji Wydziału Inżynierii Materiałowej: Zaloguj się do serwisu");
+        return Browser.getTittle().equalsIgnoreCase(tittle);
     }
 
 }
