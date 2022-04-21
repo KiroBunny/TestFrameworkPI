@@ -5,14 +5,14 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Button extends Element{
+public class InputText extends Element {
     List<String> commands;
 
-    public Button(WebElement element) {
+    public InputText(WebElement element) {
         super(element);
         commands = new ArrayList<>();
-        commands.add("click");
-        commands.add("submit");
+        commands.add("sendKeys");
+        commands.add("clear");
     }
 
     public List<String> getCommands() {

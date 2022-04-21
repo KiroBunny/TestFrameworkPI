@@ -5,7 +5,7 @@ import org.openqa.selenium.*;
 import java.util.List;
 
 public class Element implements WebElement {
-    private final WebElement webElement;
+    final WebElement webElement;
 
     public Element(WebElement element) {
         webElement = element;
