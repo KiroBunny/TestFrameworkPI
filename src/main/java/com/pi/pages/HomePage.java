@@ -1,7 +1,5 @@
 package com.pi.pages;
 
-import com.pi.configuration.Configuration;
-
 public class HomePage {
 
     private final String url = "http://192.168.0.88/";

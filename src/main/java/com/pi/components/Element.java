@@ -6,6 +6,24 @@ import java.util.List;
 
 public class Element implements WebElement {
     final WebElement webElement;
+    public static final String[] actionElement = new String[]{
+            "click",
+            "submit",
+            "send keys",
+            "clear"
+    };
+    public static final String[] actionAssert = new String[]{
+            "getTagName",
+            "getAttribute",
+            "isSelected",
+            "isEnabled",
+            "getText",
+            "isDisplayed",
+            "getLocation",
+            "getSize",
+            "getRect",
+            "getCssValue"
+    };
 
     public Element(WebElement element) {
         webElement = element;

@@ -4,7 +4,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ByIdOrName;
 
 public class Locator {
-    private final By by;
+    public static final String[] locators = new String[]{
+            "id",
+            "name",
+            "css",
+            "xpath",
+            "tag",
+            "className",
+            "linkText",
+            "partialLinkText",
+            "idOrName"
+    };
+
+    private By by;
+
+    public Locator() {}
 
     private Locator(By by) {
         this.by = by;
@@ -12,6 +26,10 @@ public class Locator {
 
     public static Locator id(String id) {
         return new Locator(By.id(id));
+    }
+
+    public static Locator name(String name) {
+        return new Locator(By.name(name));
     }
 
     public static Locator css(String css) {
@@ -32,10 +50,6 @@ public class Locator {
 
     public static Locator linkText(String linkText) {
         return new Locator(By.linkText(linkText));
-    }
-
-    public static Locator name(String name) {
-        return new Locator(By.name(name));
     }
 
     public static Locator partialLinkText(String linkText) {
