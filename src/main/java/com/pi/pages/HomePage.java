@@ -2,7 +2,7 @@ package com.pi.pages;
 
 public class HomePage {
 
-    private final String url = "http://192.168.0.88/";
+    private final String url = "http://192.168.0.88";
     private final String title = "edytaPI – Kolejna witryna oparta na WordPressie";
 
     public void goTo()

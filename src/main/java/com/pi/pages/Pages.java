@@ -4,6 +4,7 @@ import com.pi.components.Element;
 import com.pi.components.Locator;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class Pages {
 
     public static void setUpChromeDriver() {
         WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
     }
 
     public static HomePage homePage() {
@@ -23,6 +25,16 @@ public class Pages {
 
     public static LoginPage loginPage() {
         return PageFactory.initElements(driver, LoginPage.class);
+    }
+
+    public void goTo(String url) {
+        if (url.endsWith("/")) url = url.substring(0, url.length()-2);
+        Browser.goTo(url);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Element> findElementsBy(final Locator locator) {
@@ -46,5 +58,9 @@ public class Pages {
 
     public static boolean isDisplayedElementBy(WebElement element) {
         return element.isDisplayed();
+    }
+
+    public void close() {
+        Browser.close();
     }
 }

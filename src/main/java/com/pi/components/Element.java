@@ -7,22 +7,22 @@ import java.util.List;
 public class Element implements WebElement {
     final WebElement webElement;
     public static final String[] actionElement = new String[]{
-            "click",
-            "submit",
-            "send keys",
-            "clear"
+            "click()",
+            "submit()",
+            "sendKeys(CharSequence...)",
+            "clear()"
     };
     public static final String[] actionAssert = new String[]{
-            "getTagName",
-            "getAttribute",
-            "isSelected",
-            "isEnabled",
-            "getText",
-            "isDisplayed",
-            "getLocation",
-            "getSize",
-            "getRect",
-            "getCssValue"
+            "getTagName()",
+            "getAttribute(String name)",
+            "isSelected()",
+            "isEnabled()",
+            "getText()",
+            "isDisplayed()",
+            "getLocation()",
+            "getSize()",
+            "getRect()",
+            "getCssValue(String propertyName)"
     };
 
     public Element(WebElement element) {
